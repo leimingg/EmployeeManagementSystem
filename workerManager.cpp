@@ -1,6 +1,9 @@
 #include<iostream>
 using namespace std;
 #include "workerManager.h"
+#include "employee.h"
+#include "boss.h"
+#include "manager.h"
 
 void WorkerManager::Show_Menu() {
 	cout << "*****************************************************************" << endl;
@@ -51,11 +54,42 @@ void WorkerManager::Add_Emp() {
 			cout << "1.普通员工" << endl;
 			cout << "2.经理" << endl;
 			cout << "3.老板" << endl;
-			cin
+			cin >> dSelect;
+
+			Worker* worker = NULL;
+			switch (dSelect) {
+			case 1:
+				worker = new Employee(id,name,1);
+				break;
+			case 2:
+				worker = new Manager(id, name, 2);
+				break;
+			case 3:
+				worker = new Boss(id, name, 3);
+				break;
+			default:
+				break;
+			}
+			newSpace[this->m_EmpNum + i] = worker;
 		}
+
+		delete[] this->m_EmpArray;
+		this->m_EmpArray = newSpace;
+		this->m_EmpNum = newSize;
+		cout << "成功添加" << addNum << "名新职工！" << endl;
+	} else {
+		cout << "输入有误" << endl;
 	}
+	system("pause");
+	system("cls");
 }
 WorkerManager::WorkerManager() {
 	this->m_EmpNum = 0;
 	this->m_EmpArray = NULL;
+}
+
+WorkerManager::~WorkerManager() {
+	/*if (this->m_EmpArray != NULL) {
+		delete[] this->m_EmpArray;
+	}*/
 }

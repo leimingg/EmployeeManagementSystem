@@ -1,18 +1,20 @@
 #include "workerManager.h"
-#include "worker.h"
+/*#include "worker.h"
 #include "employee.h"
 #include "manager.h"
-#include "boss.h"
+#include "boss.h"*/
 
-WorkerManager::WorkerManager() {
+/*WorkerManager::WorkerManager() {
 
 }
 
 WorkerManager::~WorkerManager() {
-			  
+	if (this->m_EmpArray != NULL) {
+		delete[] this->m_EmpArray;
+	}
 }
-
-void test() {
+*/
+/*void test() {
 	Worker* worker = NULL;
 	worker = new Employee(1, "张三", 1);
 	worker->showInfo();
@@ -25,7 +27,7 @@ void test() {
 	worker = new Boss(3, "王五", 3);
 	worker->showInfo();
 	delete worker;
-}
+}*/
 
 int main() {
 	WorkerManager wm;
@@ -39,6 +41,7 @@ int main() {
 		wm.exitSystem();
 		break;
 	case 1://添加职工
+		wm.Add_Emp();
 		break;
 	case 2://显示职工
 		break;
