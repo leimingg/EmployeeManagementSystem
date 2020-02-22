@@ -6,17 +6,17 @@ using namespace std;
 #include "manager.h"
 
 void WorkerManager::Show_Menu() {
-	cout << "*****************************************************************" << endl;
-	cout << "**************Welcome to Employee Management System**************" << endl;
-	cout << "**************************0.退出管理系统**************************" << endl;
-	cout << "**************************1.增加职工信息**************************" << endl;
-	cout << "**************************2.显示职工信息**************************" << endl;
-	cout << "**************************3.删除离职职工**************************" << endl;
-	cout << "**************************4.修改职工信息**************************" << endl;
-	cout << "**************************5.查找职工信息**************************" << endl;
-	cout << "**************************6.按照编号排序**************************" << endl;
-	cout << "**************************7.清空所有文档**************************" << endl;
-	cout << "*****************************************************************" << endl;
+	cout << "******************************************************************" << endl;
+	cout << "**************Welcome to Employee Management System***************" << endl;
+	cout << "**************************0.Exist System**************************" << endl;
+	cout << "**************************1.Add	 Employee*************************" << endl;
+	cout << "**************************2.Display Employee**********************" << endl;
+	cout << "**************************3.Delete Employee***********************" << endl;
+	cout << "**************************4.Modify Employee***********************" << endl;
+	cout << "**************************5.Search Employee***********************" << endl;
+	cout << "**************************6.Sort Employee*************************" << endl;
+	cout << "**************************7.Empty	File**********************" << endl;
+	cout << "******************************************************************" << endl;
 	cout << endl;
 }
 
@@ -62,7 +62,7 @@ void WorkerManager::init_Emp() {
 	}
 }
 void WorkerManager::Add_Emp() {
-	cout << "请输入增加职工数量:" << endl;
+	cout << "Enter the number of Employees you want to add:" << endl;
 	int addNum = 0;
 	cin >> addNum;
 
@@ -80,15 +80,15 @@ void WorkerManager::Add_Emp() {
 			string name;
 			int dSelect;
 
-			cout << "请输入第" << i + 1 << "个新职工编号：" << endl;
+			cout << "Enter " << i + 1 << "Employee ID#：" << endl;
 			cin >> id;
-			cout << "请输入第" << i + 1 << "个新职工姓名：" << endl;
+			cout << "Enter" << i + 1 << " Enmployee Name：" << endl;
 			cin >> name;
 
-			cout << "请选择该职工的岗位：" << endl;
-			cout << "1.普通员工" << endl;
-			cout << "2.经理" << endl;
-			cout << "3.老板" << endl;
+			cout << "Select Employee Position：" << endl;
+			cout << "1.Normal Employee" << endl;
+			cout << "2.Manager" << endl;
+			cout << "3.Boss" << endl;
 			cin >> dSelect;
 
 			Worker* worker = NULL;
@@ -112,10 +112,10 @@ void WorkerManager::Add_Emp() {
 		this->m_EmpArray = newSpace;
 		this->m_EmpNum = newSize;
 		this->m_FileIsEmpty = false;
-		cout << "成功添加" << addNum << "名新职工！" << endl;
+		cout << "Added Successfully" << addNum << " Employee！" << endl;
 		this->save();
 	} else {
-		cout << "输入有误" << endl;
+		cout << "Enter wrong information" << endl;
 	}
 	system("pause");
 	system("cls");
